@@ -1,0 +1,16 @@
+{
+  "name": "event-reliability-lab",
+  "version": "1.0.0",
+  "private": false,
+  "type": "module",
+  "description": "A dependency-free reference implementation for signed webhook intake, idempotency, retries, dead-letter handling, and redacted audit logs.",
+  "scripts": {
+    "test": "node --test",
+    "demo": "node demo.mjs",
+    "start": "node server.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "license": "MIT"
+}

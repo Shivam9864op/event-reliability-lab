@@ -1,0 +1,19 @@
+{
+  "name": "Event Reliability Lab (credential-free template)",
+  "active": false,
+  "settings": { "executionOrder": "v1" },
+  "nodes": [
+    { "name": "Webhook intake", "type": "n8n-nodes-base.webhook", "parameters": { "path": "events", "httpMethod": "POST", "responseMode": "lastNode" }, "position": [0, 0] },
+    { "name": "Validate + normalize", "type": "n8n-nodes-base.code", "parameters": { "jsCode": "// Port the normalizeEvent rules from src/reliability.mjs.\nreturn items;" }, "position": [220, 0] },
+    { "name": "Idempotency check", "type": "n8n-nodes-base.code", "parameters": { "jsCode": "// Use an n8n Data Store or database in a real deployment.\nreturn items;" }, "position": [440, 0] },
+    { "name": "Route", "type": "n8n-nodes-base.switch", "parameters": { "mode": "expression", "output": "={{$json.type}}" }, "position": [660, 0] },
+    { "name": "Mock destination", "type": "n8n-nodes-base.noOp", "parameters": {}, "position": [880, 0] },
+    { "name": "Human review / dead letter", "type": "n8n-nodes-base.noOp", "parameters": {}, "position": [880, 180] }
+  ],
+  "connections": {
+    "Webhook intake": { "main": [[{ "node": "Validate + normalize", "type": "main", "index": 0 }]] },
+    "Validate + normalize": { "main": [[{ "node": "Idempotency check", "type": "main", "index": 0 }]] },
+    "Idempotency check": { "main": [[{ "node": "Route", "type": "main", "index": 0 }]] },
+    "Route": { "main": [[{ "node": "Mock destination", "type": "main", "index": 0 }], [{ "node": "Human review / dead letter", "type": "main", "index": 0 }]] }
+  }
+}
