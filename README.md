@@ -50,6 +50,12 @@ The signing helper is intentionally explicit so a reviewer can reproduce the req
 
 See [the threat model](docs/threat-model.md), [the n8n mapping](docs/n8n-mapping.md), and [the architecture diagram](docs/architecture.svg). The code intentionally avoids external credentials, WhatsApp accounts, private data, and outbound customer messages.
 
+## Portfolio media
+
+![Event Reliability Lab portfolio card](docs/portfolio-card.svg)
+
+This card is illustrative media for the personal demo. It is not a client screenshot or a production claim.
+
 ## Scope and limitations
 
 The stores are in memory, so restarting the process loses state. A real deployment would need a durable queue, secret management, access controls, metrics, and a reviewed connector for each destination. Those are deliberately listed as follow-up engineering work instead of being implied by this demo.
