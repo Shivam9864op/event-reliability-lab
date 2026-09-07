@@ -2,7 +2,7 @@
 
 ![Tests](https://github.com/Shivam9864op/event-reliability-lab/actions/workflows/test.yml/badge.svg)
 
-Current public release: [v1.1.1](https://github.com/Shivam9864op/event-reliability-lab/tree/v1.1.1).
+Current public release: [v1.1.2](https://github.com/Shivam9864op/event-reliability-lab/tree/v1.1.2).
 
 Event Reliability Lab is a dependency-free Node.js reference implementation for the failure paths that small webhook automations often ignore:
 
@@ -54,6 +54,8 @@ The signing helper is intentionally explicit so a reviewer can reproduce the req
 ## Design notes
 
 See [the threat model](docs/threat-model.md), [the n8n mapping](docs/n8n-mapping.md), and [the architecture diagram](docs/architecture.svg). The code intentionally avoids external credentials, WhatsApp accounts, private data, and outbound customer messages.
+
+Release history is in [CHANGELOG.md](CHANGELOG.md).
 
 ## Watch for green-but-wrong runs
 
