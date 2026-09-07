@@ -50,6 +50,10 @@ The signing helper is intentionally explicit so a reviewer can reproduce the req
 
 See [the threat model](docs/threat-model.md), [the n8n mapping](docs/n8n-mapping.md), and [the architecture diagram](docs/architecture.svg). The code intentionally avoids external credentials, WhatsApp accounts, private data, and outbound customer messages.
 
+## Watch for green-but-wrong runs
+
+The [heartbeat watchdog](docs/watchdog.md) checks whether a workflow is fresh and whether a run that received inputs produced output. It is deliberately independent and deterministic, so it can catch a stale trigger or empty result that ordinary error handling misses.
+
 ## Portfolio media
 
 ![Event Reliability Lab portfolio card](docs/portfolio-card.png)
