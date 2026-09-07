@@ -2,6 +2,8 @@
 
 ![Tests](https://github.com/Shivam9864op/event-reliability-lab/actions/workflows/test.yml/badge.svg)
 
+Current public release: [v1.1.0](https://github.com/Shivam9864op/event-reliability-lab/tree/v1.1.0).
+
 Event Reliability Lab is a dependency-free Node.js reference implementation for the failure paths that small webhook automations often ignore:
 
 `signed intake → schema validation → idempotency → deterministic routing → delivery → retry/backoff → dead-letter queue → redacted audit log`
