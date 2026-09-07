@@ -2,7 +2,7 @@
 
 ![Tests](https://github.com/Shivam9864op/event-reliability-lab/actions/workflows/test.yml/badge.svg)
 
-Current public release: [v1.1.0](https://github.com/Shivam9864op/event-reliability-lab/tree/v1.1.0).
+Current public release: [v1.1.1](https://github.com/Shivam9864op/event-reliability-lab/tree/v1.1.1).
 
 Event Reliability Lab is a dependency-free Node.js reference implementation for the failure paths that small webhook automations often ignore:
 
@@ -25,6 +25,7 @@ It is a personal open-source project, built with synthetic data and an in-memory
 ```text
 npm test
 npm run demo
+npm run watchdog
 npm start
 ```
 
@@ -57,6 +58,8 @@ See [the threat model](docs/threat-model.md), [the n8n mapping](docs/n8n-mapping
 ## Watch for green-but-wrong runs
 
 The [heartbeat watchdog](docs/watchdog.md) checks whether a workflow is fresh and whether a run that received inputs produced output. It is deliberately independent and deterministic, so it can catch a stale trigger or empty result that ordinary error handling misses.
+
+Run `npm run watchdog` to compare the checked-in healthy and alert fixtures.
 
 ## Portfolio media
 
